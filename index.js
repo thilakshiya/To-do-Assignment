@@ -1,12 +1,17 @@
 
 
    import express from 'express';
-    
+    import cors from "cors";
    import mongoose from 'mongoose';
 
    const app= express();
 
    app.use(express.json());
+   app.use(cors({
+    // origin:" http://localhost:5173",
+    // methods: ["GET","POST","PUT","DELETE"],
+    // Credential:true,
+   }));
 
    
 const todoSchema=new mongoose.Schema({
@@ -15,10 +20,6 @@ const todoSchema=new mongoose.Schema({
     completed:Boolean,
     createdAt:String,
     updatedAt:String
-
-
-   
-
 
 })
 
